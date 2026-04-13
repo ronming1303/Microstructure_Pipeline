@@ -1,0 +1,63 @@
+name: Coinbase BTC hourly imbalance
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: btc-hourly-imbalance
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Collect hourly window
+        env:
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python scripts/collect_hour_window.py \
+            --product BTC-USD \
+            --depth 10 \
+            --minutes 60 \
+            --interval-seconds 60 \
+            --minute-dir data/minute \
+            --hourly-dir data/hourly \
+            --state-file state/collector_state.json
+
+      - name: Build homepage payloads
+        run: |
+          python scripts/build_homepage_payload.py \
+            --minute-dir data/minute \
+            --hourly-dir data/hourly \
+            --latest-json public/data/imbalance_latest.json \
+            --hourly-tail-json public/data/imbalance_hourly_tail.json \
+            --hourly-tail-count 168
+
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data state public
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: update Coinbase imbalance data"
+          git push

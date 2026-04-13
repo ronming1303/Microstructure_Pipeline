@@ -1,0 +1,13 @@
+{
+  "points": [
+    {
+      "window_start_utc": "2026-04-13T02:36:55.607579Z",
+      "window_end_utc": "2026-04-13T02:36:56.895161Z",
+      "imbalance_mean": -0.199562307984,
+      "imbalance_median": -0.199562307984,
+      "imbalance_min": -0.199562307984,
+      "imbalance_max": -0.199562307984,
+      "successful_samples": 2
+    }
+  ]
+}
