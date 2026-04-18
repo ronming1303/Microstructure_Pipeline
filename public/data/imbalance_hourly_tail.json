@@ -512,6 +512,15 @@
       "imbalance_min": -0.976412764935,
       "imbalance_max": 0.972481245852,
       "successful_samples": 60
+    },
+    {
+      "window_start_utc": "2026-04-18T08:59:08.750897Z",
+      "window_end_utc": "2026-04-18T09:58:09.609672Z",
+      "imbalance_mean": -0.116942476993,
+      "imbalance_median": -0.187867603524,
+      "imbalance_min": -0.931188562979,
+      "imbalance_max": 0.938311756053,
+      "successful_samples": 60
     }
   ]
 }
