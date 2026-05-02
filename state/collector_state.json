@@ -5,11 +5,12 @@
     "data/hourly/2026-05-01_btc_usd_hourly_d10.csv"
   ],
   "last_minute_files_written": [
-    "data/minute/2026-05-01_btc_usd_d10.csv"
+    "data/minute/2026-05-01_btc_usd_d10.csv",
+    "data/minute/2026-05-02_btc_usd_d10.csv"
   ],
   "last_product_id": "BTC-USD",
   "last_successful_samples": 60,
-  "last_window_end_utc": "2026-05-01T23:54:03.791287Z",
-  "last_window_id": "btc_usd_d10_20260501T225503Z",
-  "last_window_start_utc": "2026-05-01T22:55:03.691193Z"
+  "last_window_end_utc": "2026-05-02T00:55:34.253908Z",
+  "last_window_id": "btc_usd_d10_20260501T235634Z",
+  "last_window_start_utc": "2026-05-01T23:56:34.183091Z"
 }
