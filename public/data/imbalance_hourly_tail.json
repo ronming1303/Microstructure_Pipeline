@@ -1,15 +1,6 @@
 {
   "points": [
     {
-      "window_start_utc": "2026-06-01T20:59:12.267577Z",
-      "window_end_utc": "2026-06-01T21:58:12.354080Z",
-      "imbalance_mean": -0.164018869626,
-      "imbalance_median": -0.215099994214,
-      "imbalance_min": -0.966257851494,
-      "imbalance_max": 0.879951089134,
-      "successful_samples": 60
-    },
-    {
       "window_start_utc": "2026-06-01T23:07:00.212172Z",
       "window_end_utc": "2026-06-02T00:06:00.289465Z",
       "imbalance_mean": -0.275321466866,
@@ -1510,6 +1501,15 @@
       "imbalance_median": 0.002188894625,
       "imbalance_min": -0.889331397151,
       "imbalance_max": 0.733992826484,
+      "successful_samples": 60
+    },
+    {
+      "window_start_utc": "2026-06-25T14:44:43.863693Z",
+      "window_end_utc": "2026-06-25T15:43:43.932046Z",
+      "imbalance_mean": -0.248265660405,
+      "imbalance_median": -0.352689084042,
+      "imbalance_min": -0.89795543991,
+      "imbalance_max": 0.826381109787,
       "successful_samples": 60
     }
   ]
