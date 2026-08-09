@@ -60,4 +60,9 @@ jobs:
             exit 0
           fi
           git commit -m "chore: update Coinbase imbalance data"
-          git push
+          for i in 1 2 3 4 5; do
+            git push && exit 0
+            git fetch origin main
+            git rebase origin/main || { git rebase --abort; exit 1; }
+          done
+          exit 1
