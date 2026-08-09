@@ -60,9 +60,41 @@ jobs:
             exit 0
           fi
           git commit -m "chore: update Coinbase imbalance data"
+
+          resolve_conflicts() {
+            local unmerged
+            unmerged=$(git diff --name-only --diff-filter=U)
+            [ -z "$unmerged" ] && return 1
+
+            if echo "$unmerged" | grep -q '^state/collector_state\.json$'; then
+              python scripts/resolve_state_conflict.py state/collector_state.json
+              git add state/collector_state.json
+            fi
+
+            if echo "$unmerged" | grep -qE '^public/data/(imbalance_latest|imbalance_hourly_tail)\.json$'; then
+              python scripts/build_homepage_payload.py \
+                --minute-dir data/minute \
+                --hourly-dir data/hourly \
+                --latest-json public/data/imbalance_latest.json \
+                --hourly-tail-json public/data/imbalance_hourly_tail.json \
+                --hourly-tail-count 168
+              git add public/data/imbalance_latest.json public/data/imbalance_hourly_tail.json
+            fi
+
+            [ -z "$(git diff --name-only --diff-filter=U)" ]
+          }
+
           for i in 1 2 3 4 5; do
             git push && exit 0
             git fetch origin main
-            git rebase origin/main || { git rebase --abort; exit 1; }
+            if git rebase origin/main; then
+              continue
+            fi
+            if resolve_conflicts; then
+              GIT_EDITOR=true git rebase --continue
+            else
+              git rebase --abort
+              exit 1
+            fi
           done
           exit 1

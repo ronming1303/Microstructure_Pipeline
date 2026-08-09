@@ -1,0 +1,2 @@
+data/hourly/*.csv merge=union
+data/minute/*.csv merge=union
