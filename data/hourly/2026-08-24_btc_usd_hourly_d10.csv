@@ -1,2 +1,3 @@
 window_id,window_start_utc,window_end_utc,product_id,depth,target_samples,successful_samples,failed_samples,imbalance_mean,imbalance_median,imbalance_min,imbalance_max,bid_volume_mean,ask_volume_mean,notes
 btc_usd_d10_20260824T014404Z,2026-08-24T01:44:04.960837Z,2026-08-24T02:43:05.051034Z,BTC-USD,10,60,60,0,-0.006786087259,0.009399446214,-0.946964402599,0.925339188369,0.857230600333,0.8090827735,hourly window sampler; minute rows are collected live during the run
+btc_usd_d10_20260824T030915Z,2026-08-24T03:09:15.063320Z,2026-08-24T04:08:15.169015Z,BTC-USD,10,60,60,0,-0.14072027213,-0.235450190088,-0.840318262189,0.928950633836,0.536323276833,0.826372379667,hourly window sampler; minute rows are collected live during the run
