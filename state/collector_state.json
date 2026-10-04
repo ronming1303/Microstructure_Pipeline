@@ -2,15 +2,14 @@
   "last_depth": 10,
   "last_failed_samples": 0,
   "last_hourly_files_written": [
-    "data/hourly/2026-10-03_btc_usd_hourly_d10.csv"
+    "data/hourly/2026-10-04_btc_usd_hourly_d10.csv"
   ],
   "last_minute_files_written": [
-    "data/minute/2026-10-03_btc_usd_d10.csv",
     "data/minute/2026-10-04_btc_usd_d10.csv"
   ],
   "last_product_id": "BTC-USD",
   "last_successful_samples": 60,
-  "last_window_end_utc": "2026-10-04T00:40:51.755722Z",
-  "last_window_id": "btc_usd_d10_20261003T234151Z",
-  "last_window_start_utc": "2026-10-03T23:41:51.553038Z"
+  "last_window_end_utc": "2026-10-04T06:23:36.163718Z",
+  "last_window_id": "btc_usd_d10_20261004T052436Z",
+  "last_window_start_utc": "2026-10-04T05:24:36.064982Z"
 }
