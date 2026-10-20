@@ -1,23 +1,23 @@
 {
   "latest_minute": {
-    "collected_at_utc": "2026-10-20T12:15:45.981929Z",
+    "collected_at_utc": "2026-10-20T17:40:26.933359Z",
     "product_id": "BTC-USD",
     "depth": 10,
-    "imbalance": -0.306775078648,
-    "mid_price": 81311.065,
-    "spread_bps": 0.001229844918,
+    "imbalance": -0.000539162024,
+    "mid_price": 82739.89499999999,
+    "spread_bps": 0.001208606803,
     "status": "ok"
   },
   "latest_hourly": {
-    "window_start_utc": "2026-10-20T11:16:45.981792Z",
-    "window_end_utc": "2026-10-20T12:15:46.042791Z",
+    "window_start_utc": "2026-10-20T16:41:26.933225Z",
+    "window_end_utc": "2026-10-20T17:40:27.035682Z",
     "product_id": "BTC-USD",
     "depth": 10,
     "successful_samples": 60,
     "failed_samples": 0,
-    "imbalance_mean": -0.046116561487,
-    "imbalance_median": -0.109622922761,
-    "imbalance_min": -0.686102826021,
-    "imbalance_max": 0.82028302249
+    "imbalance_mean": 0.035864005813,
+    "imbalance_median": 0.038780497963,
+    "imbalance_min": -0.799065714459,
+    "imbalance_max": 0.807145377585
   }
 }
